@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react"
+import Clock from "./components/Clock";
+import Counter from "./components/Counter";
+import EventRaising from "./components/EventRaising";
+import Greeting from "./components/Greeting";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  constructor() {
+    super()
+    console.log('constructor')
+    this.state = {
+      showGreeting: true,
+    }
+  }
+
+
+
+  render() {
+    const { showGreeting } = this.state
+    console.log('render', showGreeting);
+    return (
+      <>
+        <Clock />
+      </>
+    )
+  }
 }
 
-export default App;
+export default App
